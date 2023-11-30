@@ -2,10 +2,11 @@
 
 About My Implemented Software Renderer
 
+You could download Release.zip in repo and unzip it. And you are good to go! :)
 
 Development Language: C++
 
-Development Environment: Windows 10 - Microsoft Visual Studio 2022
+Development Environment: Windows 11 - Microsoft Visual Studio 2022
 
 Controls
 Press W or S to switch scenes.
