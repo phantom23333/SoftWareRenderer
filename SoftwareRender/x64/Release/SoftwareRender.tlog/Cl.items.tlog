@@ -1,0 +1,10 @@
+F:\gitclone\SoftWareRenderer\SoftwareRender\camera.cpp;F:\gitclone\SoftWareRenderer\SoftwareRender\x64\Release\camera.obj
+F:\gitclone\SoftWareRenderer\SoftwareRender\Common\geometry.cpp;F:\gitclone\SoftWareRenderer\SoftwareRender\x64\Release\geometry.obj
+F:\gitclone\SoftWareRenderer\SoftwareRender\framebuffer.cpp;F:\gitclone\SoftWareRenderer\SoftwareRender\x64\Release\framebuffer.obj
+F:\gitclone\SoftWareRenderer\SoftwareRender\main.cpp;F:\gitclone\SoftWareRenderer\SoftwareRender\x64\Release\main.obj
+F:\gitclone\SoftWareRenderer\SoftwareRender\model.cpp;F:\gitclone\SoftWareRenderer\SoftwareRender\x64\Release\model.obj
+F:\gitclone\SoftWareRenderer\SoftwareRender\renderer.cpp;F:\gitclone\SoftWareRenderer\SoftwareRender\x64\Release\renderer.obj
+F:\gitclone\SoftWareRenderer\SoftwareRender\rendererApp.cpp;F:\gitclone\SoftWareRenderer\SoftwareRender\x64\Release\rendererApp.obj
+F:\gitclone\SoftWareRenderer\SoftwareRender\renderPipeline.cpp;F:\gitclone\SoftWareRenderer\SoftwareRender\x64\Release\renderPipeline.obj
+F:\gitclone\SoftWareRenderer\SoftwareRender\x64\Release\rcc\qrc_rendererApp.cpp;F:\gitclone\SoftWareRenderer\SoftwareRender\x64\Release\qrc_rendererApp.obj
+F:\gitclone\SoftWareRenderer\SoftwareRender\x64\Release\moc\moc_rendererApp.cpp;F:\gitclone\SoftWareRenderer\SoftwareRender\x64\Release\moc_rendererApp.obj
