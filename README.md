@@ -32,12 +32,17 @@ Following these steps should produce results similar to the image above, signify
 
 However, there were many areas for improvement and optimization. Below are some of the optimizations I implemented.
 
+
+
+
 Improvement 1: Real-Time Rendering and Camera Control
 One major issue with TinyRenderer was that it outputs the rendering result to a TGA image, which is a form of offline rendering. Sometimes, rendering issues can only be discovered by adjusting the viewing angle, which made debugging difficult. Our first major improvement was to integrate a graphical interface for real-time rendering and to implement camera control through input signals.
 
 ![](https://github.com/phantom23333/SoftwareRenderer/blob/main/README_IMG/SoftwareRenderer_tinyrenderer_orbit_camera.gif)
 
 For this, I referred directly to the code in zauonlok’s software rendering project. The graphical interface uses the Qt Creator Lib, and the camera control was based on another open-source library for orbit camera control. After these improvements, we achieved the control effects shown in the image above.
+
+
 
 Improvement 2: Optimizing Shader Process
 Let’s first look at a shader code from TinyRenderer (we’re discussing shaders written in C++, not special shader languages):
@@ -98,6 +103,9 @@ bool BlinnShader::fragment(shader_struct_v2f* v2f, Color& color) {
 ```
 In my implementation, I tried to encapsulate the vertex and fragment shader stages similar to how shaders are written in Unity. This makes it easier to understand what the engine does for us outside the shader functions.
 
+
+
+
 Improvement 3: Scene and Objects
 You might have noticed that TinyRenderer doesn’t discuss model transformations much. In the MVP matrix, the MV matrix is combined into one matrix called ModelView, which actually only includes the View matrix. It assumes the model's origin is at the world space origin and doesn't consider rotation or scaling. Once we deal with multiple objects or rotations and scaling of a single object, this approach becomes insufficient.
 
@@ -122,15 +130,18 @@ The Transform structure includes position, rotation, and scaling information. Ea
 
 I won’t go into detail about the Scene implementation here; it mainly involves managing the creation and destruction of objects, including models, lights, cameras, etc.
 
+
+
+
 Improvement 4: Input Signal Integration for Scene Control
 ![](https://github.com/phantom23333/SoftwareRenderer/blob/main/README_IMG/SoftwareRenderer_final.gif)
 
 Referring to camera control, we can use the Win32 API to receive input signals and implement input control logic. As shown above, we implemented logic for switching shaders and scenes (switching models) through keyboard input. Additionally, we can easily implement control of object movement, light direction, and shadow toggle after integrating scene and object management.
 
-Improvement 5: GUI Output of Scene Information
 
 
-Writing a Shader
+
+Improvement 5: Writing a Shader
 Create a Shader Class: Inherit from the IShader class.
 
 ```cpp
