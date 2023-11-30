@@ -35,7 +35,7 @@ However, there were many areas for improvement and optimization. Below are some 
 Improvement 1: Real-Time Rendering and Camera Control
 One major issue with TinyRenderer was that it outputs the rendering result to a TGA image, which is a form of offline rendering. Sometimes, rendering issues can only be discovered by adjusting the viewing angle, which made debugging difficult. Our first major improvement was to integrate a graphical interface for real-time rendering and to implement camera control through input signals.
 
-![](https://github.com/phantom23333/SoftWareRenderer/README_IMG/SoftwareRenderer_tinyrenderer_orbit_camera.gif)
+![](https://github.com/phantom23333/SoftwareRenderer/blob/main/README_IMG/SoftwareRenderer_tinyrenderer_orbit_camera.gif)
 
 For this, I referred directly to the code in zauonlok’s software rendering project. The graphical interface uses the Qt Creator Lib, and the camera control was based on another open-source library for orbit camera control. After these improvements, we achieved the control effects shown in the image above.
 
@@ -123,7 +123,7 @@ The Transform structure includes position, rotation, and scaling information. Ea
 I won’t go into detail about the Scene implementation here; it mainly involves managing the creation and destruction of objects, including models, lights, cameras, etc.
 
 Improvement 4: Input Signal Integration for Scene Control
-![](https://github.com/phantom23333/SoftWareRenderer/README_IMG/SoftwareRenderer_final.gif)
+![](https://github.com/phantom23333/SoftwareRenderer/blob/main/README_IMG/SoftwareRenderer_final.gif)
 
 Referring to camera control, we can use the Win32 API to receive input signals and implement input control logic. As shown above, we implemented logic for switching shaders and scenes (switching models) through keyboard input. Additionally, we can easily implement control of object movement, light direction, and shadow toggle after integrating scene and object management.
 
@@ -212,6 +212,6 @@ void rendererApp::render() {
 }
 
 ```
-![](https://github.com/phantom23333/SoftWareRenderer/README_IMG/softwarerender.png)
+![](https://github.com/phantom23333/SoftwareRenderer/blob/main/README_IMG/softwarerender.png)
 
 By following these steps, you can successfully write and integrate a new shader into your rendering application. The process involves careful structuring of the shader code and its properties, as well as ensuring that it is correctly integrated into the existing rendering pipeline and UI components of the application.
