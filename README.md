@@ -10,20 +10,20 @@ Development Language: C++
 
 Development Environment: Windows 11 - Microsoft Visual Studio 2022
 
-##Getting Started
-#Prerequisites
+## Getting Started
+# Prerequisites
 C++
 Windows 11
 Microsoft Visual Studio 2022
 
-#Installation
+# Installation
 1. Download `Release.zip` from the repository.
 2. Unzip the file.
 3. Open the project in Microsoft Visual Studio 2022.
 Controls
 Instructions for user interaction within the software renderer.
 
-#Scene Navigation
+# Scene Navigation
 W or S: Switch scenes.
 #Camera Control
 Left Mouse Button: Rotate the camera.
@@ -35,8 +35,7 @@ Menu: Switch shaders.
 
 
 
-
-##Improvement 1: Real-Time Rendering and Camera Control
+## Improvement 1: Real-Time Rendering and Camera Control
 One major issue with TinyRenderer was that it outputs the rendering result to a TGA image, which is a form of offline rendering. Sometimes, rendering issues can only be discovered by adjusting the viewing angle, which made debugging difficult. Our first major improvement was to integrate a graphical interface for real-time rendering and to implement camera control through input signals.
 
 ![](https://github.com/phantom23333/SoftwareRenderer/blob/main/README_IMG/SoftwareRenderer_tinyrenderer_orbit_camera.gif)
@@ -45,7 +44,7 @@ For this, I referred directly to the code in zauonlok’s software rendering pro
 
 
 
-##Improvement 2: Optimizing Shader Process
+## Improvement 2: Optimizing Shader Process
 Let’s first look at a shader code from TinyRenderer (we’re discussing shaders written in C++, not special shader languages):
 
 ```cpp
@@ -107,7 +106,7 @@ In my implementation, I tried to encapsulate the vertex and fragment shader stag
 
 
 
-##Improvement 3: Scene and Objects
+## Improvement 3: Scene and Objects
 You might have noticed that TinyRenderer doesn’t discuss model transformations much. In the MVP matrix, the MV matrix is combined into one matrix called ModelView, which actually only includes the View matrix. It assumes the model's origin is at the world space origin and doesn't consider rotation or scaling. Once we deal with multiple objects or rotations and scaling of a single object, this approach becomes insufficient.
 
 We can follow game engine rules, establish the concept of objects, and store each object's position, rotation, scaling, etc. We can also establish a scene concept, managing all objects within it.
@@ -134,7 +133,7 @@ I won’t go into detail about the Scene implementation here; it mainly involves
 
 
 
-##Improvement 4: Input Signal Integration for Scene Control
+## Improvement 4: Input Signal Integration for Scene Control
 ![](https://github.com/phantom23333/SoftwareRenderer/blob/main/README_IMG/SoftwareRenderer_final.gif)
 
 Referring to camera control, we can use the Win32 API to receive input signals and implement input control logic. As shown above, we implemented logic for switching shaders and scenes (switching models) through keyboard input. Additionally, we can easily implement control of object movement, light direction, and shadow toggle after integrating scene and object management.
@@ -142,7 +141,7 @@ Referring to camera control, we can use the Win32 API to receive input signals a
 
 
 
-##Improvement 5: Writing a Shader
+## Improvement 5: Writing a Shader
 Create a Shader Class: Inherit from the IShader class.
 
 ```cpp
