@@ -1,42 +1,42 @@
-# SoftWareRenderer - Ji
+### SoftWareRenderer - Ji
 
 About My Implemented Software Renderer
 
 You could download Release.zip in repo and unzip it. And you are good to go! :)
 
+InSpired by https://github.com/ssloy/tinyrenderer/wiki/Lesson-0:-getting-started
+
 Development Language: C++
 
 Development Environment: Windows 11 - Microsoft Visual Studio 2022
 
+##Getting Started
+#Prerequisites
+C++
+Windows 11
+Microsoft Visual Studio 2022
+
+#Installation
+1. Download `Release.zip` from the repository.
+2. Unzip the file.
+3. Open the project in Microsoft Visual Studio 2022.
 Controls
-Press W or S to switch scenes.
-Hold down the left mouse button to rotate the camera.
-Hold down the right mouse button to move the camera.
-Press the space bar to reset the camera.
-Press A or D to rotate the direction of the light.
-Using Menu to switch Shaders.
+Instructions for user interaction within the software renderer.
 
-Implementation Process
-We started by following the TinyRenderer tutorial and implemented the following steps:
-
-Drawing Lines Using the Point-Drawing API: We first implemented the ability to draw lines using a basic API for drawing points.
-Drawing Solid Triangles Using the Line-Drawing API: Using the line-drawing functionality, we then implemented the drawing of solid triangles.
-OBJ Model Data Reading and Triangle Rendering: We implemented the reading of OBJ model data and used this data to render the model’s triangular surfaces.
-Implementing Z-Buffer for Correct Depth Data: A Z-buffer was used to establish the correct depth data, enabling the accurate rendering of the model’s front and back relationships.
-Perspective Projection Implementation: We implemented perspective projection to add depth and realism to the renderings.
-Camera View Transformation: The transformation of the camera's view was implemented to allow different perspectives of the scene.
-Basic Shader Implementation: Basic shaders were implemented, including basic lighting models, texture mapping, and normal mapping in tangent space.
-Shadow Map Implementation: We also added shadow mapping to enhance the realism of the lighting in the rendered scenes.
-Link to an image showing the TinyRenderer result
-
-Following these steps should produce results similar to the image above, signifying the basic completion of the software renderer.
-
-However, there were many areas for improvement and optimization. Below are some of the optimizations I implemented.
+#Scene Navigation
+W or S: Switch scenes.
+#Camera Control
+Left Mouse Button: Rotate the camera.
+Right Mouse Button: Move the camera.
+Space Bar: Reset the camera.
+Lighting and Shading
+A or D: Rotate the direction of the light.
+Menu: Switch shaders.
 
 
 
 
-Improvement 1: Real-Time Rendering and Camera Control
+##Improvement 1: Real-Time Rendering and Camera Control
 One major issue with TinyRenderer was that it outputs the rendering result to a TGA image, which is a form of offline rendering. Sometimes, rendering issues can only be discovered by adjusting the viewing angle, which made debugging difficult. Our first major improvement was to integrate a graphical interface for real-time rendering and to implement camera control through input signals.
 
 ![](https://github.com/phantom23333/SoftwareRenderer/blob/main/README_IMG/SoftwareRenderer_tinyrenderer_orbit_camera.gif)
@@ -45,7 +45,7 @@ For this, I referred directly to the code in zauonlok’s software rendering pro
 
 
 
-Improvement 2: Optimizing Shader Process
+##Improvement 2: Optimizing Shader Process
 Let’s first look at a shader code from TinyRenderer (we’re discussing shaders written in C++, not special shader languages):
 
 ```cpp
@@ -107,7 +107,7 @@ In my implementation, I tried to encapsulate the vertex and fragment shader stag
 
 
 
-Improvement 3: Scene and Objects
+##Improvement 3: Scene and Objects
 You might have noticed that TinyRenderer doesn’t discuss model transformations much. In the MVP matrix, the MV matrix is combined into one matrix called ModelView, which actually only includes the View matrix. It assumes the model's origin is at the world space origin and doesn't consider rotation or scaling. Once we deal with multiple objects or rotations and scaling of a single object, this approach becomes insufficient.
 
 We can follow game engine rules, establish the concept of objects, and store each object's position, rotation, scaling, etc. We can also establish a scene concept, managing all objects within it.
@@ -134,7 +134,7 @@ I won’t go into detail about the Scene implementation here; it mainly involves
 
 
 
-Improvement 4: Input Signal Integration for Scene Control
+##Improvement 4: Input Signal Integration for Scene Control
 ![](https://github.com/phantom23333/SoftwareRenderer/blob/main/README_IMG/SoftwareRenderer_final.gif)
 
 Referring to camera control, we can use the Win32 API to receive input signals and implement input control logic. As shown above, we implemented logic for switching shaders and scenes (switching models) through keyboard input. Additionally, we can easily implement control of object movement, light direction, and shadow toggle after integrating scene and object management.
@@ -142,7 +142,7 @@ Referring to camera control, we can use the Win32 API to receive input signals a
 
 
 
-Improvement 5: Writing a Shader
+##Improvement 5: Writing a Shader
 Create a Shader Class: Inherit from the IShader class.
 
 ```cpp
