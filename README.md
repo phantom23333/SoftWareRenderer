@@ -10,7 +10,7 @@ Development Language: C++
 
 Development Environment: Windows 11 - Microsoft Visual Studio 2022
 
-## Getting Started
+# Getting Started
 # Prerequisites
 C++
 Windows 11
@@ -223,6 +223,6 @@ void rendererApp::render() {
 }
 
 ```
-![](https://github.com/phantom23333/SoftwareRenderer/blob/main/README_IMG/softwarerender.png)
+![](https://github.com/phantom23333/SoftwareRenderer/blob/main/README_IMG/softwarerender.gif)
 
 By following these steps, you can successfully write and integrate a new shader into your rendering application. The process involves careful structuring of the shader code and its properties, as well as ensuring that it is correctly integrated into the existing rendering pipeline and UI components of the application.
